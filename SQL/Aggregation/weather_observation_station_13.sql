@@ -1,0 +1,14 @@
+DROP TABLE IF EXISTS STATION;
+CREATE TABLE STATION
+(
+    ID     int,
+    CITY   varchar(21),
+    STATE  varchar(21),
+    LAT_N  int,
+    LONG_W int
+);
+
+SELECT TRUNCATE(SUM(LAT_N), 4) AS sum_of_lat_n
+FROM STATION
+WHERE LAT_N > 38.7880
+  AND LAT_N < 137.2345;
